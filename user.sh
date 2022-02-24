@@ -248,6 +248,82 @@ function SAMBA_INSTALL() {
   sudo gpasswd sambashare -a $(whoami)
 }
 
+### Needed Software                                                          ###
+function NEEDED_SOFTWARE() {
+  clear
+  dialog --infobox "Adding Some Needed Software." 3 32
+  sleep 2
+  $ZB -S --noconfirm --needed tuned fontpreview-ueberzug-git ytfzf cpufetch
+}
+
+### Setting Up Bluetooth                                                     ###
+function BLUETOOTHSETUP() {
+  clear
+  dialog --infobox "Installing Bluetooth Files." 3 31
+  sleep 2
+  sudo pacman -S --noconfirm --needed pulseaudio-bluetooth bluez bluez-libs bluez-utils bluez-plugins blueberry bluez-tools bluez-cups
+  sudo systemctl enable bluetooth.service
+  sudo systemctl start bluetooth.service
+  sudo sed -i 's/'#AutoEnable=false'/'AutoEnable=true'/g' /etc/bluetooth/main.conf
+}
+
+### Setup Printing                                                           ###
+function PRINTERSETUP() {
+  clear
+  dialog --infobox "Installing Printer Subsystem." 3 33
+  sleep 2
+  sudo pacman -S --noconfirm --needed cups cups-pdf ghostscript gsfonts gutenprint gtk3-print-backends libcups system-config-printer foomatic-db foomatic-db-ppds foomatic-db-gutenprint-ppds foomatic-db-engine foomatic-db-nonfree foomatic-db-nonfree-ppds
+  if [ ${HP_PRINT} = "yes" ]; then
+    sudo pacman -S --noconfirm --needed hplip
+  fi
+  if [ ${EP_PRINT} = "yes" ]; then
+    $ZB -S --noconfirm --needed epson-inkjet-printer-escpr
+  fi
+  sudo systemctl enable cups.service
+}
+
+### Check What Video Card Installed                                          ###
+function VC_INSTALL() {
+  if [[ $(lspci -k | grep VGA | grep -i nvidia) ]]; then
+    clear
+    dialog --infobox "Installing nVidia Video Drivers." 3 36
+    sleep 2
+    sudo pacman -S --noconfirm --needed nvidia nvidia-cg-toolkit nvidia-settings nvidia-utils lib32-nvidia-cg-toolkit lib32-nvidia-utils lib32-opencl-nvidia opencl-nvidia cuda ffnvcodec-headers lib32-libvdpau libxnvctrl pycuda-headers python-pycuda
+    sudo pacman -R --noconfirm xf86-video-nouveau
+  fi
+
+  if [[ $(lspci -k | grep VGA | grep -i amd) ]]; then
+    clear
+    dialog --infobox "Installing AMD Video Drivers." 3 33
+    sleep 2
+    sudo pacman -S --noconfirm --needed opencl-mesa lib32-opencl-mesa vulkan-mesa-layers lib32-vulkan-mesa-layers mesa-vdpau lib32-mesa-vdpau intel-compute-runtime intel-graphics-compiler intel-opencl-clang vulkan-icd-loader lib32-vulkan-icd-loader vkd3d lib32-vkd3d vulkan-swrast vulkan-radeon lib32-vulkan-radeon libva-mesa-driver lib32-libva-mesa-driver # Testing stuff amdvlk lib32-amdvlk
+    $ZB -S --noconfirm --needed opencl-amd
+    dialog --infobox "Thanks for supporting a free and open vendor." 3 49
+    sleep 2
+  fi
+}
+
+### Install Sound Themes                                                     ###
+function INSTALL_SOUNDTHEME() {
+  clear
+  dialog --infobox "Installing Some Sound Themes." 3 33
+  sleep 2
+  sudo pacman -S --noconfirm --needed deepin-sound-theme
+  $ZB -S --noconfirm --needed sound-theme-smooth sound-theme-elementary-git
+}
+
+### Install Extra Fonts                                                      ###
+function INSTALL_EXTRAFONTS() {
+  clear
+  dialog --infobox "Installing Some Extra System Fonts." 3 39
+  sleep 2
+  sudo pacman -S --noconfirm --needed adobe-source-sans-pro-fonts cantarell-fonts noto-fonts terminus-font ttf-bitstream-vera ttf-dejavu ttf-droid ttf-inconsolata ttf-liberation ttf-roboto ttf-ubuntu-font-family tamsyn-font awesome-terminal-fonts ttf-font-awesome ttf-hack ttf-ibm-plex
+  $ZB -S --noconfirm --needed ttf-ms-fonts ttf-mac-fonts siji-git ttf-font-awesome
+  if [ ${NERD_FONTS} = "yes" ]; then
+    $ZB -S --noconfirm --needed nerd-fonts-complete
+  fi
+}
+
 ### Main Program                                                             ###
 AUR_HELPER
 SAMBA_SHARES
@@ -257,5 +333,22 @@ SOUNDTHEME_SUPPORT
 EXTRA_FONTS
 
 AUR_SELECTION
-SAMBA_SHARES
+NEEDED_SOFTWARE
+if [ ${SAMBA_SH} = "yes" ]; then
+  SAMBA_INSTALL
+fi
+if [ ${BT_SUPPORT} = "yes" ]; then
+  BLUETOOTHSETUP
+fi
+if [ ${PSUPPORT} = "yes" ]; then
+  PRINTERSETUP
+fi
+VC_INSTALL
+if [ ${SND_THEME} = "yes" ]; then
+  INSTALL_SOUNDTHEME
+fi
+if [ ${EXT_FONTS} = "yes" ]; then
+  INSTALL_EXTRAFONTS
+fi
+
 BASHRC_CONF
