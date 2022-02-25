@@ -343,7 +343,7 @@ fi
 if [ ${PSUPPORT} = "yes" ]; then
   PRINTERSETUP
 fi
-VC_INSTALL
+#VC_INSTALL
 if [ ${SND_THEME} = "yes" ]; then
   INSTALL_SOUNDTHEME
 fi
