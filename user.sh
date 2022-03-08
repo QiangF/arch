@@ -350,5 +350,6 @@ fi
 if [ ${EXT_FONTS} = "yes" ]; then
   INSTALL_EXTRAFONTS
 fi
+VC_INSTALL
 
 BASHRC_CONF
