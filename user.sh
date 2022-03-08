@@ -35,7 +35,7 @@ function AUR_HELPER() {
   clear
   echo "################################################################################"
   echo "### Which AUR Helper Do You Want To Install?                                 ###"
-  echo "### 1)  YAY (Currently Broken)                                               ###"
+  echo "### 1)  YAY                                                                  ###"
   echo "### 2)  PARU (Takes a while to compile)                                      ###"
   echo "################################################################################"
   read case;
