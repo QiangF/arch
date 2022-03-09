@@ -20,7 +20,7 @@ function CLI_PROGS() {
     clear
     dialog --infobox "Installing some CLI programs." 3 32
     sleep 2
-     pacman -S --noconfirm --needed base-devel nano networkmanager man-db man-pages git btrfs-progs systemd-swap xfsprogs reiserfsprogs jfsutils nilfs-utils terminus-font ntp dialog neofetch git wget rsync htop openssh archlinux-wallpaper glances python-defusedxml python-packaging bashtop packagekit reflector bat mc lynx bwm-ng lsd gtop bpytop duf ncdu
+     pacman -S --noconfirm --needed base-devel nano networkmanager man-db man-pages git btrfs-progs systemd-swap xfsprogs reiserfsprogs jfsutils nilfs-utils terminus-font ntp dialog neofetch git wget rsync htop openssh archlinux-wallpaper glances python-defusedxml python-packaging bashtop packagekit reflector bat mc lynx bwm-ng lsd gtop bpytop duf ncdu terminus-font
 }
 
 ### Set Number Of CPUs In MAKEFLAGS                                          ###
