@@ -47,10 +47,10 @@ function GNOME_DE () {
 ### Setting Up Xorg Display Manager                                          ###
 function XORG_SET () {
     cp /etc/X11/xinit/xinitrc ~/.xinitrc
-    sed -i 's/'twm'/'#twm'/g' .xinitrc
-    sed -i 's/'xclock'/'#xclock'/g' .xinitrc
-    sed -i 's/'xterm'/'#xterm'/g' .xinitrc
-    echo "exec gnome-session" >> .xinitrc
+    sed -i 's/'twm'/'#twm'/g' ~/.xinitrc
+    sed -i 's/'xclock'/'#xclock'/g' ~/.xinitrc
+    sed -i 's/'xterm'/'#xterm'/g' ~/.xinitrc
+    echo "exec gnome-session" >> ~/.xinitrc
 }
 
 ### Main Program                                                             ###
