@@ -74,9 +74,24 @@ function MAKEFLAGS_CPU() {
   esac
 }
 
+### Setting Up Some Things                                                   ###
+function SET_VAR() {
+  sed -i 's/'#Color'/'Color'/g' /etc/pacman.conf
+  sed -i 's/\#ParallelDownloads = 5/ParallelDownloads = 5'/g /etc/pacman.conf
+  sed -i '/\Color/aILoveCandy' /etc/pacman.conf
+  #sed -i 's/\#Include/Include'/g /etc/pacman.conf
+  sed -i '/^#\[multilib\]/{
+    N
+    s/^#\(\[multilib\]\n\)#\(Include\ .\+\)/\1\2/
+  }' /etc/pacman.conf
+  sed -i 's/\#\[multilib\]/\[multilib\]'/g /etc/pacman.conf
+  echo "set linenumbers" >> /etc/nanorc
+  echo 'include "/usr/share/nano/*.nanorc"' >> /etc/nanorc
+}
 
 ### Main Program                                                             ###
- pacman -S --noconfirm --needed dialog
+pacman -S --noconfirm --needed dialog
+SET_VAR
 PACMAN_KEYS
 MAKEFLAGS_CPU
 CLI_PROGS
