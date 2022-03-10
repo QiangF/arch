@@ -49,7 +49,7 @@ function XORG_SET () {
     sed -i 's/'twm'/'#twm'/g' ~/.xinitrc
     sed -i 's/'xclock'/'#xclock'/g' ~/.xinitrc
     sed -i 's/'xterm'/'#xterm'/g' ~/.xinitrc
-    echo "exec startplasma-x11" >> .xinitrc
+    echo "exec startplasma-x11" >> ~/.xinitrc
 }
 
 ### Main Program                                                             ###
