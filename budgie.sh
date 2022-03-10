@@ -30,18 +30,17 @@ function AUR_HELPER() {
 ################################################################################
 function XORG_DISPLAY() {
     clear
-    dialog --infobox "Installing The Budgie Desktop Environment." 3 46
+    dialog --infobox "Installing XORG Display Manager." 3 36
     sleep 2
-    sudo pacman -S --noconfirm --needed budgie-desktop budgie-extras gnome-system-monitor nautilus gnome-disk-utility gnome-control-center gnome-backgrounds gnome-calculator gedit variety onboard ark file-roller unrar p7zip gnome-tweaks
+    sudo pacman -S --noconfirm --needed xorg xorg-drivers xorg-xinit xterm kvantum-qt5 terminator mesa lib32-mesa glu lib32-glu mesa-demos lib32-mesa-demos libclc ocl-icd lib32-ocl-icd
 }
 
 ### Installing the Desktop                                                   ###
 function DESKTOP_DE () {
     clear
-    dialog --infobox "Installing The Mate Desktop Environment." 3 44
+    dialog --infobox "Installing The Budgie Desktop Environment." 3 46
     sleep 2
-    sudo pacman -S --noconfirm --needed mate mate-extra gnome-disk-utility variety onboard ark file-roller unrar p7zip
-    $ZB -S --noconfirm --needed mate-tweak brisk-menu mate-screensaver-hacks mugshot
+    sudo pacman -S --noconfirm --needed budgie-desktop budgie-extras gnome-system-monitor nautilus gnome-disk-utility gnome-control-center gnome-backgrounds gnome-calculator gedit variety onboard ark file-roller unrar p7zip gnome-tweaks
 }
 
 ### Setting Up Xorg Display Manager                                          ###

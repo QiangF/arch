@@ -29,10 +29,10 @@ function AUR_HELPER() {
 ### Installing the Display Manager                                           ###
 ################################################################################
 function XORG_DISPLAY() {
-  clear
-  dialog --infobox "Installing XORG Display Manager." 3 36
-  sleep 2
-  sudo pacman -S --noconfirm --needed xorg xorg-drivers xorg-xinit xterm kvantum-qt5 terminator mesa lib32-mesa glu lib32-glu mesa-demos lib32-mesa-demos libclc ocl-icd lib32-ocl-icd
+    clear
+    dialog --infobox "Installing XORG Display Manager." 3 36
+    sleep 2
+    sudo pacman -S --noconfirm --needed xorg xorg-drivers xorg-xinit xterm kvantum-qt5 terminator mesa lib32-mesa glu lib32-glu mesa-demos lib32-mesa-demos libclc ocl-icd lib32-ocl-icd
 }
 
 ### Installing the Desktop                                                   ###
