@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################################################
-### Installing The Plasma Desktop On Arch Linux By:                          ###
+### Installing The LXQT Desktop On Arch Linux By:                            ###
 ### Erik Sundquist                                                           ###
 ################################################################################
 ### Review and edit before using                                             ###
@@ -29,18 +29,21 @@ function AUR_HELPER() {
 ### Installing the Display Manager                                           ###
 ################################################################################
 function XORG_DISPLAY() {
-  clear
-  dialog --infobox "Installing XORG Display Manager." 3 36
-  sleep 2
-  sudo pacman -S --noconfirm --needed xorg xorg-drivers xorg-xinit xterm kvantum-qt5 terminator mesa lib32-mesa glu lib32-glu mesa-demos lib32-mesa-demos libclc ocl-icd lib32-ocl-icd
+    clear
+    dialog --infobox "Installing The Budgie Desktop Environment." 3 46
+    sleep 2
+    sudo pacman -S --noconfirm --needed budgie-desktop budgie-extras gnome-system-monitor nautilus gnome-disk-utility gnome-control-center gnome-backgrounds gnome-calculator gedit variety onboard ark file-roller unrar p7zip gnome-tweaks
 }
 
 ### Installing the Desktop                                                   ###
 function DESKTOP_DE () {
     clear
-    dialog --infobox "Installing The KDE Plasma Desktop Environment." 3 50
+    dialog --infobox "Installing The LXQT Desktop Environment." 3 44
     sleep 2
-    sudo pacman -S --noconfirm --needed plasma kde-applications gnome-disk-utility redshift packagekit-qt5
+    sudo pacman -S --noconfirm --needed lxqt gnome-disk-utility picom gnome-calculator gedit variety onboard ark file-roller unrar p7zip packagekit-qt5
+    wget http://raw.githubusercontent.com/lotw69/arch-scripts/master/picom.conf
+    sudo rm /etc/xdg/picom.conf
+    sudo mv picom.conf /etc/xdg/picom.conf
 }
 
 ### Setting Up Xorg Display Manager                                          ###
@@ -49,7 +52,7 @@ function XORG_SET () {
     sed -i 's/'twm'/'#twm'/g' ~/.xinitrc
     sed -i 's/'xclock'/'#xclock'/g' ~/.xinitrc
     sed -i 's/'xterm'/'#xterm'/g' ~/.xinitrc
-    echo "exec startplasma-x11" >> ~/.xinitrc
+    echo "exec startlxqt" >> ~/.xinitrc
 }
 
 ### Main Program                                                             ###

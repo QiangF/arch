@@ -35,7 +35,7 @@ function XORG_DISPLAY() {
   sudo pacman -S --noconfirm --needed xorg xorg-drivers xorg-xinit xterm kvantum-qt5 terminator mesa lib32-mesa glu lib32-glu mesa-demos lib32-mesa-demos libclc ocl-icd lib32-ocl-icd
 }
 
-### Installing the Gnome Desktop                                             ###
+### Installing the Desktop                                                   ###
 function DESKTOP_DE () {
     clear
     dialog --infobox "Installing The Deepin Desktop Environment." 3 46

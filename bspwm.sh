@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################################################
-### Installing The XFCE Desktop On Arch Linux By:                          ###
+### Installing The BSPWM Window Manager On Arch Linux By:                    ###
 ### Erik Sundquist                                                           ###
 ################################################################################
 ### Review and edit before using                                             ###
@@ -29,22 +29,43 @@ function AUR_HELPER() {
 ### Installing the Display Manager                                           ###
 ################################################################################
 function XORG_DISPLAY() {
-  clear
-  dialog --infobox "Installing XORG Display Manager." 3 36
-  sleep 2
-  sudo pacman -S --noconfirm --needed xorg xorg-drivers xorg-xinit xterm kvantum-qt5 terminator mesa lib32-mesa glu lib32-glu mesa-demos lib32-mesa-demos libclc ocl-icd lib32-ocl-icd
+    clear
+    dialog --infobox "Installing The Budgie Desktop Environment." 3 46
+    sleep 2
+    sudo pacman -S --noconfirm --needed budgie-desktop budgie-extras gnome-system-monitor nautilus gnome-disk-utility gnome-control-center gnome-backgrounds gnome-calculator gedit variety onboard ark file-roller unrar p7zip gnome-tweaks
 }
 
 ### Installing the Desktop                                                   ###
 function DESKTOP_DE () {
     clear
-    dialog --infobox "Installing The XFCE4 Desktop Environment." 3 45
+    dialog --infobox "Installing The BSPWM Window Manager." 3 40
     sleep 2
-    sudo pacman -S --noconfirm --needed xfce4 xfce4-goodies gnome-disk-utility ark file-roller unrar p7zip alacarte gnome-calculator picom variety libnma networkmanager networkmanager-openconnect networkmanager-openvpn networkmanager-pptp nm-connection-editor network-manager-applet onboard
-    $ZB -S --noconfirm --needed xfce4-screensaver xfce4-panel-profiles-git mugshot solarized-dark-themes gtk-theme-glossyblack mcos-mjv-xfce-edition xfce4-theme-switcher xts-windows10-theme xts-macos-theme xts-dark-theme xts-arcolinux-theme xts-windowsxp-theme xts-windows-server-2003-theme
+    sudo pacman -S --noconfirm --needed bspwm sxhkd dmenu rofi nitrogen picom xfce4-terminal thunar thunar-archive-plugin thunar-media-tags-plugin xfce4-screenshooter onboard ark file-roller unrar p7zip arandr network-manager-applet gnome-disk-utility feh eog lxappearance galculator dunst
+    $ZB -S --noconfirm --needed pnmixer mugshot polybar
+    mkdir -p ~/.config/bspwm
+    mkdir -p ~/.config/sxhkd
+    mkdir -p ~/.config/polybar
+    cd ~/.config/bspwm
+    wget http://raw.githubusercontent.com/lotw69/arch-scripts/master/bspwmrc
+    chmod +x ~/.config/bspwm/bspwmrc
+    cd ~/.config/sxhkd
+    wget http://raw.githubusercontent.com/lotw69/arch-scripts/master/sxhkdrc
+    chmod +x ~/.config/sxhkd/sxhkdrc
+    cd ~/.config/polybar
+    wget http://raw.githubusercontent.com/lotw69/arch-scripts/master/config-polybar
+    cp config-polybar config
+    wget http://raw.githubusercontent.com/lotw69/arch-scripts/master/launch.sh
+    chmod +x ~/.config/polybar/config
+    chmod +x ~/.config/polybar/launch.sh
+    cd ~/
     wget http://raw.githubusercontent.com/lotw69/arch-scripts/master/picom.conf
     sudo rm /etc/xdg/picom.conf
     sudo mv picom.conf /etc/xdg/picom.conf
+    mkdir -p ~/.config/dunst
+    cp /etc/dunst/dunstrc ~/.config/dunst/
+    echo "alias conf='nano ~/.config/bspwm/bspwmrc'" >> ~/.bashrc
+    echo "alias conf-key='nano ~/.config/sxhkd/sxhkdrc'" >> ~/.bashrc
+    echo "alias conf-bar='nano ~/.config/polybar/config'" >> ~/.bashrc
 }
 
 ### Setting Up Xorg Display Manager                                          ###
@@ -53,7 +74,7 @@ function XORG_SET () {
     sed -i 's/'twm'/'#twm'/g' ~/.xinitrc
     sed -i 's/'xclock'/'#xclock'/g' ~/.xinitrc
     sed -i 's/'xterm'/'#xterm'/g' ~/.xinitrc
-    echo "exec startxfce4" >> ~/.xinitrc
+    echo "exec bspwm" >> ~/.xinitrc
 }
 
 ### Main Program                                                             ###
