@@ -87,6 +87,7 @@ function SET_VAR() {
   sed -i 's/\#\[multilib\]/\[multilib\]'/g /etc/pacman.conf
   echo "set linenumbers" >> /etc/nanorc
   echo 'include "/usr/share/nano/*.nanorc"' >> /etc/nanorc
+  echo "FONT=ter-120n" >> /etc/vconsole.conf
 }
 
 ### Main Program                                                             ###

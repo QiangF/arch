@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################################################
-### Installing The Gnome Desktop On Arch Linux By:                           ###
+### Installing The Deepin Desktop On Arch Linux By:                           ###
 ### Erik Sundquist                                                           ###
 ################################################################################
 ### Review and edit before using                                             ###
@@ -38,10 +38,9 @@ function XORG_DISPLAY() {
 ### Installing the Gnome Desktop                                             ###
 function DESKTOP_DE () {
     clear
-    dialog --infobox "Installing The Gnome Desktop Environment." 3 45
+    dialog --infobox "Installing The Deepin Desktop Environment." 3 46
     sleep 2
-    sudo pacman -S --noconfirm --needed gnome gnome-extra nautilus-share variety gnome-packagekit gnome-software-packagekit-plugin gtk-engine-murrine gtk-engines gnome-themes-extra
-    $ZB -S --noconfirm --needed chrome-gnome-shell
+    sudo pacman -S --noconfirm --needed deepin deepin-extra gnome-disk-utility ark file-roller unrar p7zip onboard deepin-kwin deepin-polkit-agent deepin-polkit-agent-ext-gnomekeyring packagekit-qt5
 }
 
 ### Setting Up Xorg Display Manager                                          ###
@@ -50,7 +49,7 @@ function XORG_SET () {
     sed -i 's/'twm'/'#twm'/g' ~/.xinitrc
     sed -i 's/'xclock'/'#xclock'/g' ~/.xinitrc
     sed -i 's/'xterm'/'#xterm'/g' ~/.xinitrc
-    echo "exec gnome-session" >> ~/.xinitrc
+    echo "exec startdde" >> ~/.xinitrc
 }
 
 ### Main Program                                                             ###
