@@ -5,9 +5,28 @@
 ################################################################################
 ### Review and edit before using                                             ###
 ################################################################################
-################################################################################
+
+### Which AUR Helper did you install?                                        ###
+function AUR_HELPER() {
+  clear
+  echo "################################################################################"
+  echo "### Which AUR Helper Did You Install?                                        ###"
+  echo "### 1)  YAY                                                                  ###"
+  echo "### 2)  PARU                                                                 ###"
+  echo "################################################################################"
+  read case;
+
+  case $case in
+    1)
+    ZB="yay"
+    ;;
+    2)
+    ZB="paru"
+    ;;
+  esac
+}
+
 ### Software To Install (My Standard Applications)                           ###
-################################################################################
 function INSTALL_EXTRASOFTWARE() {
   clear
   dialog --infobox "Installing Extra Software." 3 31
@@ -51,4 +70,5 @@ function INSTALL_EXTRASOFTWARE() {
 
 ### Main Program                                                             ###
 clear
+AUR_HELPER
 INSTALL_EXTRASOFTWARE
