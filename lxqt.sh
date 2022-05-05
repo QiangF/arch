@@ -40,7 +40,7 @@ function DESKTOP_DE () {
     clear
     dialog --infobox "Installing The LXQT Desktop Environment." 3 44
     sleep 2
-    sudo pacman -S --noconfirm --needed lxqt gnome-disk-utility picom gnome-calculator gedit variety onboard ark file-roller unrar p7zip packagekit-qt5
+    sudo pacman -S --noconfirm --needed lxqt gnome-disk-utility picom gnome-calculator gedit variety onboard ark file-roller unrar p7zip packagekit-qt5 breeze-icons breeze-gtk breeze
     wget http://raw.githubusercontent.com/lotw69/arch-scripts/master/picom.conf
     sudo rm /etc/xdg/picom.conf
     sudo mv picom.conf /etc/xdg/picom.conf
