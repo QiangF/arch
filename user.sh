@@ -28,6 +28,7 @@ function BASHRC_CONF() {
   echo "alias cpu='cpufetch'" >> ~/.bashrc
   echo "alias info='clear&&neofetch'" >> ~/.bashrc
   echo "alias ref-update='sudo reflector --country US --latest 20 --sort rate --verbose --save /etc/pacman.d/mirrorlist'" >> ~/.bashrc
+  echo "alias compress='clear&&btrfs filesystem defragment -c -r -v '" >> ~/.bashrc
 }
 
 ### Which AUR Helper                                                         ###
