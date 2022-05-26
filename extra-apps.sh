@@ -56,9 +56,9 @@ function INSTALL_EXTRASOFTWARE() {
   sudo pacman -S --noconfirm --needed openshot shotcut quodlibet vlc flowblade
   $ZB -S --noconfirm --needed makemkv olive lbry-app-bin
   #System Utilities
-  sudo pacman -S --noconfirm --needed cockpit cockpit-machines cockpit-pcp cockpit-podman syncthing dconf-editor virt-manager dnsmasq virglrenderer qemu-arch-extra qemu-guest-agent pacmanlogviewer deluge plank cairo-dock cairo-dock-plug-ins ncdu #  hardinfo
-  #$ZB -S --noconfirm --needed plank-theme-arc plank-theme-numix plank-theme-namor unity-like-plank-theme
-  $ZB -S --noconfirm --needed ovmf virtio-win libguestfs cairo-dock-themes cairo-dock-plug-ins-extras dxvk-bin timeshift stacer protontricks protonup-git protonup-qt
+  sudo pacman -S --noconfirm --needed cockpit cockpit-machines cockpit-pcp cockpit-podman syncthing dconf-editor virt-manager dnsmasq virglrenderer qemu-arch-extra qemu-guest-agent pacmanlogviewer deluge plank ncdu #  hardinfo cairo-dock cairo-dock-plug-ins
+  #$ZB -S --noconfirm --needed plank-theme-arc plank-theme-numix plank-theme-namor unity-like-plank-theme cairo-dock-themes cairo-dock-plug-ins-extras
+  $ZB -S --noconfirm --needed ovmf virtio-win libguestfs dxvk-bin timeshift stacer protontricks protonup-git protonup-qt
   $ZB -S --noconfirm --needed -a ebtables
   sudo systemctl enable --now cockpit.socket
   sudo systemctl enable libvirtd.service
