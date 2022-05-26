@@ -53,8 +53,8 @@ function INSTALL_EXTRASOFTWARE() {
   #Programming
   sudo pacman -S --noconfirm --needed atom meld rust rust-racer uncrustify
   #Sound/Video
-  sudo pacman -S --noconfirm --needed openshot shotcut quodlibet vlc
-  $ZB -S --noconfirm --needed makemkv olive lbry-app-bin flowblade
+  sudo pacman -S --noconfirm --needed openshot shotcut quodlibet vlc flowblade
+  $ZB -S --noconfirm --needed makemkv olive lbry-app-bin
   #System Utilities
   sudo pacman -S --noconfirm --needed cockpit cockpit-machines cockpit-pcp cockpit-podman syncthing dconf-editor virt-manager dnsmasq virglrenderer qemu-arch-extra qemu-guest-agent pacmanlogviewer deluge plank cairo-dock cairo-dock-plug-ins ncdu #  hardinfo
   #$ZB -S --noconfirm --needed plank-theme-arc plank-theme-numix plank-theme-namor unity-like-plank-theme
