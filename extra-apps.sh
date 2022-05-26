@@ -45,7 +45,7 @@ function INSTALL_EXTRASOFTWARE() {
   $ZB -S --noconfirm --needed gamemode lib32-gamemode minecraft-launcher
   #Graphics
   sudo pacman -S --noconfirm --needed librecad darktable inkscape krita blender openscad luminancehdr freecad
-  $ZB -S --noconfirm --needed drawio-desktop
+  $ZB -S --noconfirm --needed drawio-desktop natron
   #Internet
   sudo pacman -S --noconfirm --needed transmission-gtk fragments remmina
   #Office
@@ -54,7 +54,7 @@ function INSTALL_EXTRASOFTWARE() {
   sudo pacman -S --noconfirm --needed atom meld rust rust-racer uncrustify
   #Sound/Video
   sudo pacman -S --noconfirm --needed openshot shotcut quodlibet vlc
-  $ZB -S --noconfirm --needed makemkv olive lbry-app-bin
+  $ZB -S --noconfirm --needed makemkv olive lbry-app-bin flowblade
   #System Utilities
   sudo pacman -S --noconfirm --needed cockpit cockpit-machines cockpit-pcp cockpit-podman syncthing dconf-editor virt-manager dnsmasq virglrenderer qemu-arch-extra qemu-guest-agent pacmanlogviewer deluge plank cairo-dock cairo-dock-plug-ins ncdu #  hardinfo
   #$ZB -S --noconfirm --needed plank-theme-arc plank-theme-numix plank-theme-namor unity-like-plank-theme
