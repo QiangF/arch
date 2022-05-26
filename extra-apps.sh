@@ -50,6 +50,7 @@ function INSTALL_EXTRASOFTWARE() {
   sudo pacman -S --noconfirm --needed transmission-gtk fragments remmina
   #Office
   sudo pacman -S --noconfirm --needed homebank
+  $ZB -S --noconfirm --needed onlyoffice-bin
   #Programming
   sudo pacman -S --noconfirm --needed atom meld rust rust-racer uncrustify
   #Sound/Video
