@@ -88,6 +88,7 @@ function SET_VAR() {
   echo "set linenumbers" >> /etc/nanorc
   echo 'include "/usr/share/nano/*.nanorc"' >> /etc/nanorc
   echo "FONT=ter-120n" >> /etc/vconsole.conf
+  echo 'vm.swappiness=10' | sudo tee /etc/sysctl.d/99-sysctl.conf
 }
 
 ### Main Program                                                             ###
