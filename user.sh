@@ -7,9 +7,9 @@
 
 ### BashRC Configuration                                                     ###
 function BASHRC_CONF() {
-  clear
   dialog --infobox "Setting Up The BashRC Config File." 3 38
   sleep 3
+  clear
   echo " " >> ~/.bashrc
   echo "# Check to see if neofetch is installed and if so display it" >> ~/.bashrc
   echo "if [ -f /usr/bin/neofetch ]; then clear & neofetch; fi" >> ~/.bashrc
@@ -203,6 +203,7 @@ function AUR_SELECTION() {
   if [ ${ZB} = "yay" ]; then
     dialog --infobox "Installing The AUR Helper YAY." 3 34
     sleep 2
+    clear
     git clone https://aur.archlinux.org/yay.git
     cd yay
     makepkg -si --noconfirm --needed
@@ -212,6 +213,7 @@ function AUR_SELECTION() {
   if [ ${ZB} = "paru" ]; then
     dialog --infobox "Installing The AUR Helper Paru." 3 35
     sleep 2
+    clear
     git clone https://aur.archlinux.org/paru.git
     cd paru
     makepkg -si --noconfirm --needed
@@ -223,9 +225,9 @@ function AUR_SELECTION() {
 
 ### Samba Shares Installation                                                ###
 function SAMBA_INSTALL() {
-  clear
   dialog --infobox "Setting Up The Samba Shares." 3 32
   sleep 2
+  clear
   sudo pacman -S --noconfirm --needed samba gvfs-smb avahi nss-mdns
   sudo wget "https://git.samba.org/samba.git/?p=samba.git;a=blob_plain;f=examples/smb.conf.default;hb=HEAD" -O /etc/samba/smb.conf
   sudo sed -i -r 's/MYGROUP/WORKGROUP/' /etc/samba/smb.conf
@@ -251,17 +253,17 @@ function SAMBA_INSTALL() {
 
 ### Needed Software                                                          ###
 function NEEDED_SOFTWARE() {
-  clear
   dialog --infobox "Adding Some Needed Software." 3 32
   sleep 2
+  clear
   $ZB -S --noconfirm --needed tuned fontpreview-ueberzug-git ytfzf cpufetch
 }
 
 ### Setting Up Bluetooth                                                     ###
 function BLUETOOTHSETUP() {
-  clear
   dialog --infobox "Installing Bluetooth Files." 3 31
   sleep 2
+  clear
   sudo pacman -S --noconfirm --needed pulseaudio-bluetooth bluez bluez-libs bluez-utils bluez-plugins blueberry bluez-tools bluez-cups
   sudo systemctl enable bluetooth.service
   sudo systemctl start bluetooth.service
@@ -270,9 +272,9 @@ function BLUETOOTHSETUP() {
 
 ### Setup Printing                                                           ###
 function PRINTERSETUP() {
-  clear
   dialog --infobox "Installing Printer Subsystem." 3 33
   sleep 2
+  clear
   sudo pacman -S --noconfirm --needed cups cups-pdf ghostscript gsfonts gutenprint gtk3-print-backends libcups system-config-printer foomatic-db foomatic-db-ppds foomatic-db-gutenprint-ppds foomatic-db-engine foomatic-db-nonfree foomatic-db-nonfree-ppds
   if [ ${HP_PRINT} = "yes" ]; then
     sudo pacman -S --noconfirm --needed hplip
@@ -286,17 +288,17 @@ function PRINTERSETUP() {
 ### Check What Video Card Installed                                          ###
 function VC_INSTALL() {
   if [[ $(lspci -k | grep VGA | grep -i nvidia) ]]; then
-    clear
     dialog --infobox "Installing nVidia Video Drivers." 3 36
     sleep 2
+    clear
     sudo pacman -S --noconfirm --needed nvidia nvidia-cg-toolkit nvidia-settings nvidia-utils lib32-nvidia-cg-toolkit lib32-nvidia-utils lib32-opencl-nvidia opencl-nvidia cuda ffnvcodec-headers lib32-libvdpau libxnvctrl pycuda-headers python-pycuda
     sudo pacman -R --noconfirm xf86-video-nouveau
   fi
 
   if [[ $(lspci -k | grep VGA | grep -i amd) ]]; then
-    clear
     dialog --infobox "Installing AMD Video Drivers." 3 33
     sleep 2
+    clear
     sudo pacman -S --noconfirm --needed opencl-mesa lib32-opencl-mesa vulkan-mesa-layers lib32-vulkan-mesa-layers mesa-vdpau lib32-mesa-vdpau intel-compute-runtime intel-graphics-compiler intel-opencl-clang vulkan-icd-loader lib32-vulkan-icd-loader vkd3d lib32-vkd3d vulkan-swrast vulkan-radeon lib32-vulkan-radeon libva-mesa-driver lib32-libva-mesa-driver # Testing stuff amdvlk lib32-amdvlk
     $ZB -S --noconfirm --needed rocm-opencl-runtime
     dialog --infobox "Thanks for supporting a free and open vendor." 3 49
@@ -306,18 +308,18 @@ function VC_INSTALL() {
 
 ### Install Sound Themes                                                     ###
 function INSTALL_SOUNDTHEME() {
-  clear
   dialog --infobox "Installing Some Sound Themes." 3 33
   sleep 2
+  clear
   sudo pacman -S --noconfirm --needed deepin-sound-theme
   $ZB -S --noconfirm --needed sound-theme-smooth sound-theme-elementary-git
 }
 
 ### Install Extra Fonts                                                      ###
 function INSTALL_EXTRAFONTS() {
-  clear
   dialog --infobox "Installing Some Extra System Fonts." 3 39
   sleep 2
+  clear
   sudo pacman -S --noconfirm --needed adobe-source-sans-pro-fonts cantarell-fonts noto-fonts terminus-font ttf-bitstream-vera ttf-dejavu ttf-droid ttf-inconsolata ttf-liberation ttf-roboto ttf-ubuntu-font-family tamsyn-font awesome-terminal-fonts ttf-font-awesome ttf-hack ttf-ibm-plex
   $ZB -S --noconfirm --needed ttf-ms-fonts ttf-mac-fonts siji-git ttf-font-awesome
   if [ ${NERD_FONTS} = "yes" ]; then

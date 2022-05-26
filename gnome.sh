@@ -29,17 +29,17 @@ function AUR_HELPER() {
 ### Installing the Display Manager                                           ###
 ################################################################################
 function XORG_DISPLAY() {
-    clear
     dialog --infobox "Installing XORG Display Manager." 3 36
     sleep 2
+    clear
     sudo pacman -S --noconfirm --needed xorg xorg-drivers xorg-xinit xterm kvantum-qt5 terminator mesa lib32-mesa glu lib32-glu mesa-demos lib32-mesa-demos libclc ocl-icd lib32-ocl-icd
 }
 
 ### Installing the Desktop                                                   ###
 function DESKTOP_DE () {
-    clear
     dialog --infobox "Installing The Gnome Desktop Environment." 3 45
     sleep 2
+    clear
     sudo pacman -S --noconfirm --needed gnome gnome-extra nautilus-share variety gnome-packagekit gnome-software-packagekit-plugin gtk-engine-murrine gtk-engines gnome-themes-extra
     $ZB -S --noconfirm --needed chrome-gnome-shell
 }

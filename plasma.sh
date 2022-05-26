@@ -29,17 +29,17 @@ function AUR_HELPER() {
 ### Installing the Display Manager                                           ###
 ################################################################################
 function XORG_DISPLAY() {
-    clear
     dialog --infobox "Installing XORG Display Manager." 3 36
     sleep 2
+    clear
     sudo pacman -S --noconfirm --needed xorg xorg-drivers xorg-xinit xterm kvantum-qt5 terminator mesa lib32-mesa glu lib32-glu mesa-demos lib32-mesa-demos libclc ocl-icd lib32-ocl-icd
 }
 
 ### Installing the Desktop                                                   ###
 function DESKTOP_DE () {
-    clear
     dialog --infobox "Installing The KDE Plasma Desktop Environment." 3 50
     sleep 2
+    clear
     sudo pacman -S --noconfirm --needed plasma kde-applications gnome-disk-utility redshift packagekit-qt5
 }
 

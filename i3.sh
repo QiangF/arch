@@ -29,17 +29,17 @@ function AUR_HELPER() {
 ### Installing the Display Manager                                           ###
 ################################################################################
 function XORG_DISPLAY() {
-    clear
     dialog --infobox "Installing XORG Display Manager." 3 36
     sleep 2
+    clear
     sudo pacman -S --noconfirm --needed xorg xorg-drivers xorg-xinit xterm kvantum-qt5 terminator mesa lib32-mesa glu lib32-glu mesa-demos lib32-mesa-demos libclc ocl-icd lib32-ocl-icd
 }
 
 ### Installing the Desktop                                                   ###
 function DESKTOP_DE () {
-    clear
     dialog --infobox "Installing The i3 Window Manager." 3 37
     sleep 2
+    clear
     sudo pacman -S --noconfirm --needed i3 gnome-disk-utility onboard ark file-roller unrar p7zip picom dmenu rofi nitrogen feh thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman xfce4-terminal xfce4-screenshooter papirus-icon-theme network-manager-applet arandr scrot lxappearance polkit-gnome galculator dunst ristretto
     $ZB -S --noconfirm --needed mugshot i3exit pnmixer
     #$ZB -S --noconfirm --needed betterlockscreen

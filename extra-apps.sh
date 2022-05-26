@@ -28,9 +28,9 @@ function AUR_HELPER() {
 
 ### Software To Install (My Standard Applications)                           ###
 function INSTALL_EXTRASOFTWARE() {
-  clear
   dialog --infobox "Installing Extra Software." 3 31
   sleep 2
+  clear
   #3d Printer
   sudo pacman -S --noconfirm --needed cura cura-resources-materials prusa-slicer
   $ZB -S --noconfirm --needed mattercontrol

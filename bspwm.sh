@@ -29,17 +29,17 @@ function AUR_HELPER() {
 ### Installing the Display Manager                                           ###
 ################################################################################
 function XORG_DISPLAY() {
-    clear
     dialog --infobox "Installing XORG Display Manager." 3 36
     sleep 2
+    clear
     sudo pacman -S --noconfirm --needed xorg xorg-drivers xorg-xinit xterm kvantum-qt5 terminator mesa lib32-mesa glu lib32-glu mesa-demos lib32-mesa-demos libclc ocl-icd lib32-ocl-icd
 }
 
 ### Installing the Desktop                                                   ###
 function DESKTOP_DE () {
-    clear
     dialog --infobox "Installing The BSPWM Window Manager." 3 40
     sleep 2
+    clear
     sudo pacman -S --noconfirm --needed bspwm sxhkd dmenu rofi nitrogen picom xfce4-terminal thunar thunar-archive-plugin thunar-media-tags-plugin xfce4-screenshooter onboard ark file-roller unrar p7zip arandr network-manager-applet gnome-disk-utility feh eog lxappearance galculator dunst
     $ZB -S --noconfirm --needed pnmixer mugshot polybar
     mkdir -p ~/.config/bspwm
