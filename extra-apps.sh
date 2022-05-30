@@ -32,34 +32,27 @@ function INSTALL_EXTRASOFTWARE() {
   sleep 2
   clear
   #3d Printer
-  sudo pacman -S --noconfirm --needed cura cura-resources-materials prusa-slicer
-  $ZB -S --noconfirm --needed mattercontrol
+  $ZB -S --noconfirm --needed mattercontrol cura cura-resources-materials prusa-slicer
   #Accessories
-  sudo pacman -S --noconfirm --needed cool-retro-term
-  $ZB -S --noconfirm --needed isomaster ventoy-bin mintstick-git rpi-imager
+  $ZB -S --noconfirm --needed isomaster ventoy-bin mintstick-git rpi-imager cool-retro-term
   #Chat
-  sudo pacman -S --noconfirm --needed hexchat teamspeak3 telegram-desktop discord
-  $ZB -S --noconfirm --needed skypeforlinux-preview-bin zoom
+  $ZB -S --noconfirm --needed skypeforlinux-preview-bin zoom hexchat teamspeak3 telegram-desktop discord
   #Games
-  sudo pacman -S --noconfirm --needed extremetuxracer supertux supertuxkart
-  $ZB -S --noconfirm --needed gamemode lib32-gamemode minecraft-launcher
+  $ZB -S --noconfirm --needed gamemode lib32-gamemode minecraft-launcher extremetuxracer supertux supertuxkart
   #Graphics
-  sudo pacman -S --noconfirm --needed librecad darktable inkscape krita blender openscad luminancehdr freecad
-  $ZB -S --noconfirm --needed drawio-desktop natron
+  $ZB -S --noconfirm --needed drawio-desktop natron librecad darktable inkscape krita blender openscad luminancehdr freecad
   #Internet
-  sudo pacman -S --noconfirm --needed transmission-gtk fragments remmina
+  $ZB -S --noconfirm --needed transmission-gtk fragments remmina
   #Office
-  sudo pacman -S --noconfirm --needed homebank
-  $ZB -S --noconfirm --needed onlyoffice-bin
+  $ZB -S --noconfirm --needed onlyoffice-bin homebank
   #Programming
-  sudo pacman -S --noconfirm --needed atom meld rust rust-racer uncrustify
+  $ZB -S --noconfirm --needed atom meld rust rust-racer uncrustify
   #Sound/Video
-  sudo pacman -S --noconfirm --needed openshot shotcut quodlibet vlc flowblade
-  $ZB -S --noconfirm --needed makemkv olive lbry-app-bin
+  $ZB -S --noconfirm --needed makemkv olive lbry-app-bin openshot shotcut quodlibet vlc flowblade
   #System Utilities
-  sudo pacman -S --noconfirm --needed cockpit cockpit-machines cockpit-pcp cockpit-podman syncthing dconf-editor virt-manager dnsmasq virglrenderer qemu-arch-extra qemu-guest-agent pacmanlogviewer deluge plank ncdu #  hardinfo cairo-dock cairo-dock-plug-ins
+
   #$ZB -S --noconfirm --needed plank-theme-arc plank-theme-numix plank-theme-namor unity-like-plank-theme cairo-dock-themes cairo-dock-plug-ins-extras
-  $ZB -S --noconfirm --needed ovmf virtio-win libguestfs dxvk-bin timeshift stacer protontricks protonup-git protonup-qt
+  $ZB -S --noconfirm --needed ovmf virtio-win libguestfs dxvk-bin timeshift stacer protontricks protonup-git protonup-qt cockpit cockpit-machines cockpit-pcp cockpit-podman syncthing dconf-editor virt-manager dnsmasq virglrenderer qemu-arch-extra qemu-guest-agent pacmanlogviewer deluge plank ncdu #  hardinfo cairo-dock cairo-dock-plug-ins
   $ZB -S --noconfirm --needed -a ebtables
   sudo systemctl enable --now cockpit.socket
   sudo systemctl enable libvirtd.service

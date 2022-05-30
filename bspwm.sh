@@ -32,7 +32,7 @@ function XORG_DISPLAY() {
     dialog --infobox "Installing XORG Display Manager." 3 36
     sleep 2
     clear
-    sudo pacman -S --noconfirm --needed xorg xorg-drivers xorg-xinit xterm kvantum-qt5 terminator mesa lib32-mesa glu lib32-glu mesa-demos lib32-mesa-demos libclc ocl-icd lib32-ocl-icd
+    $ZB -S --noconfirm --needed xorg xorg-drivers xorg-xinit xterm kvantum-qt5 terminator mesa lib32-mesa glu lib32-glu mesa-demos lib32-mesa-demos libclc ocl-icd lib32-ocl-icd
 }
 
 ### Installing the Desktop                                                   ###
@@ -40,8 +40,7 @@ function DESKTOP_DE () {
     dialog --infobox "Installing The BSPWM Window Manager." 3 40
     sleep 2
     clear
-    sudo pacman -S --noconfirm --needed bspwm sxhkd dmenu rofi nitrogen picom xfce4-terminal thunar thunar-archive-plugin thunar-media-tags-plugin xfce4-screenshooter onboard ark file-roller unrar p7zip arandr network-manager-applet gnome-disk-utility feh eog lxappearance galculator dunst
-    $ZB -S --noconfirm --needed pnmixer mugshot polybar
+    $ZB -S --noconfirm --needed pnmixer mugshot polybar bspwm sxhkd dmenu rofi nitrogen picom xfce4-terminal thunar thunar-archive-plugin thunar-media-tags-plugin xfce4-screenshooter onboard ark file-roller unrar p7zip arandr network-manager-applet gnome-disk-utility feh eog lxappearance galculator dunst
     mkdir -p ~/.config/bspwm
     mkdir -p ~/.config/sxhkd
     mkdir -p ~/.config/polybar
