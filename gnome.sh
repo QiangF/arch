@@ -41,7 +41,7 @@ function DESKTOP_DE () {
     sleep 2
     clear
     sudo pacman -S --noconfirm --needed gnome gnome-extra nautilus-share variety gnome-packagekit gnome-software-packagekit-plugin gtk-engine-murrine gtk-engines gnome-themes-extra
-    $ZB -S --noconfirm --needed chrome-gnome-shell
+    $ZB -S --noconfirm --needed gnome-browser-connector extension-manager
 }
 
 ### Setting Up Xorg Display Manager                                          ###
