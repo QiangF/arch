@@ -300,7 +300,7 @@ function VC_INSTALL() {
     sleep 2
     clear
     sudo pacman -S --noconfirm --needed opencl-mesa lib32-opencl-mesa vulkan-mesa-layers lib32-vulkan-mesa-layers mesa-vdpau lib32-mesa-vdpau intel-compute-runtime intel-graphics-compiler intel-opencl-clang vulkan-icd-loader lib32-vulkan-icd-loader vkd3d lib32-vkd3d vulkan-swrast vulkan-radeon lib32-vulkan-radeon libva-mesa-driver lib32-libva-mesa-driver # Testing stuff amdvlk lib32-amdvlk
-    $ZB -S --noconfirm --needed rocm-opencl-runtime
+    $ZB -S --noconfirm --needed rocm-opencl-runtime rocm-hip-runtime
     dialog --infobox "Thanks for supporting a free and open vendor." 3 49
     sleep 2
   fi

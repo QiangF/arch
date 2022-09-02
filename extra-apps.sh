@@ -32,7 +32,7 @@ function INSTALL_EXTRASOFTWARE() {
   sleep 2
   clear
   #3d Printer
-  $ZB -S --noconfirm --needed mattercontrol cura cura-resources-materials prusa-slicer
+  $ZB -S --noconfirm --needed mattercontrol prusa-slicer
   #Accessories
   $ZB -S --noconfirm --needed isomaster ventoy-bin mintstick-git rpi-imager cool-retro-term
   #Chat

@@ -31,6 +31,14 @@ function MAKEFLAGS_CPU() {
   numberofcores=$(grep -c ^processor /proc/cpuinfo)
   case $numberofcores in
 
+      24)
+          echo "You have " $numberofcores" cores."
+          echo "Changing the makeflags for "$numberofcores" cores."
+           sed -i 's/#MAKEFLAGS="-j2"/MAKEFLAGS="-j24"/g' /etc/makepkg.conf
+          echo "Changing the compression settings for "$numberofcores" cores."
+           sed -i 's/COMPRESSXZ=(xz -c -z -)/COMPRESSXZ=(xz -c -T 24 -z -)/g' /etc/makepkg.conf
+          ;;
+      
       16)
           echo "You have " $numberofcores" cores."
           echo "Changing the makeflags for "$numberofcores" cores."
