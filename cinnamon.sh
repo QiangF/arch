@@ -41,7 +41,7 @@ function DESKTOP_DE () {
     sleep 2
     clear
     sudo pacman -S --noconfirm --needed cinnamon gnome-disk-utility gnome-system-monitor gnome-calculator gpicview gedit variety onboard ark file-roller unrar p7zip nemo-fileroller nemo-share
-    $ZB -S --noconfirm --needed mint-themes cinnamon-sound-effects
+    $ZB -S --noconfirm --needed mint-themes mint-x-icons mint-y-icons mint-artwork-cinnamon gvfs-smb
 }
 
 ### Setting Up Xorg Display Manager                                          ###
