@@ -31,7 +31,7 @@ function INSTALL_STDSOFTWARE() {
   dialog --infobox "Installing Standard Software." 3 33
   sleep 2
   clear
-  sudo pacman -S --noconfirm --needed firefox winetricks steam handbrake obs-studio gimp libreoffice-fresh clementine kdenlive aspell-en youtube-dl paperwork terminator
+  sudo pacman -S --noconfirm --needed firefox steam aspell-en youtube-dl terminator #winetricks handbrake obs-studio gimp libreoffice-fresh clementine kdenlive paperwork
   $ZB -S --noconfirm --needed system-monitoring-center
   #sudo systemctl enable tuned.service
 }

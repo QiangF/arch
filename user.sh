@@ -256,7 +256,7 @@ function NEEDED_SOFTWARE() {
   dialog --infobox "Adding Some Needed Software." 3 32
   sleep 2
   clear
-  $ZB -S --noconfirm --needed tuned fontpreview-ueberzug-git ytfzf cpufetch
+  $ZB -S --noconfirm --needed tuned fontpreview-ueberzug-git ytfzf cpufetch flatpak
 }
 
 ### Setting Up Bluetooth                                                     ###
