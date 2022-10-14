@@ -41,7 +41,8 @@ function DESKTOP_DE () {
     sleep 2
     clear
     sudo pacman -S --noconfirm --needed gnome gnome-extra nautilus-share variety gnome-packagekit gnome-software-packagekit-plugin gtk-engine-murrine gtk-engines gnome-themes-extra
-    $ZB -S --noconfirm --needed gnome-browser-connector extension-manager
+    $ZB -S --noconfirm --needed gnome-browser-connector extension-manager gradience-git adw-gtk3
+    flatpak -y install org.gtk.Gtk3theme.adw-gtk3
 }
 
 ### Setting Up Xorg Display Manager                                          ###

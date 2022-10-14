@@ -29,6 +29,12 @@ function BASHRC_CONF() {
   echo "alias info='clear&&neofetch'" >> ~/.bashrc
   echo "alias ref-update='sudo reflector --country US --latest 20 --sort rate --verbose --save /etc/pacman.d/mirrorlist'" >> ~/.bashrc
   echo "alias compress='clear&&sudo btrfs filesystem defragment -c -r -v '" >> ~/.bashrc
+  if [ ${ZB} = "yay" ]; then
+    echo "alias upd='clear&&yay --noconfirm -Syyu &&flatpak -y upgrade'" >> ~/.bashrc
+  fi
+  if [ ${ZB} = "paru" ]; then
+    echo "alias upd='clear&&paru --noconfirm -Syyu &&flatpak -y upgrade'" >> ~/.bashrc
+  fi
 }
 
 ### Which AUR Helper                                                         ###
@@ -300,7 +306,7 @@ function VC_INSTALL() {
     sleep 2
     clear
     sudo pacman -S --noconfirm --needed opencl-mesa lib32-opencl-mesa vulkan-mesa-layers lib32-vulkan-mesa-layers mesa-vdpau lib32-mesa-vdpau intel-compute-runtime intel-graphics-compiler intel-opencl-clang vulkan-icd-loader lib32-vulkan-icd-loader vkd3d lib32-vkd3d vulkan-swrast vulkan-radeon lib32-vulkan-radeon libva-mesa-driver lib32-libva-mesa-driver # Testing stuff amdvlk lib32-amdvlk
-    $ZB -S --noconfirm --needed rocm-opencl-runtime rocm-hip-runtime
+    #$ZB -S --noconfirm --needed rocm-opencl-runtime rocm-hip-runtime
     dialog --infobox "Thanks for supporting a free and open vendor." 3 49
     sleep 2
   fi
