@@ -14,6 +14,7 @@
   sleep 3
   flatpak -y install net.davidotek.pupgui2
   flatpak -y install com.github.tchx84.Flatseal
+  flatpak -y install com.system76.Popsicle
 }
 
 ### Games ###
@@ -35,6 +36,7 @@ function SOFT_GAMES() {
   flatpak -y install com.mojang.Minecraft
   flatpak -y install org.polymc.PolyMC
   flatpak -y install com.github.k4zmu2a.spacecadetpinball
+  flatpak -y install org.gnome.Aisleriot
 }
 
 ### Sound & Video ###
@@ -53,7 +55,7 @@ function SOFT_SOUNDVIDEO () {
   flatpak -y install org.olivevideoeditor.Olive
   flatpak -y install io.lbry.lbry-app
   flatpak -y install org.clementine_player.Clementine
-  #flatpak -y install io.mpv.Mpv
+  flatpak -y install io.mpv.Mpv
   flatpak -y install io.github.jliljebl.Flowblade
   flatpak -y install org.gpodder.gpodder
 }
@@ -90,7 +92,7 @@ function SOFT_OFFICE () {
   flatpak -y install fr.free.Homebank
   flatpak -y install org.onlyoffice.desktopeditors
   flatpak -y install io.posidon.Paper
-  sudo dnf -y install paperwork
+  flatpak -y install work.openpaper.Paperwork
 }
 
 ### 3d Printer
@@ -125,6 +127,7 @@ function SOFT_INTERNET () {
   echo "### Installing Internet                                                      ###"
   echo "################################################################################"
   sleep 3
+  flatpak -y install org.remmina.Remmina
 }
 
 ### Programming
@@ -146,7 +149,7 @@ SOFT_CHAT
 SOFT_GAMES
 SOFT_GRAPHICS
 SOFT_OFFICE
-#SOFT_INTERNET
+SOFT_INTERNET
 SOFT_PROG
 SOFT_SOUNDVIDEO
 SOFT_UTILS
