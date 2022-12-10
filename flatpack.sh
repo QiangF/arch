@@ -15,6 +15,9 @@
   flatpak -y install net.davidotek.pupgui2
   flatpak -y install com.github.tchx84.Flatseal
   flatpak -y install com.system76.Popsicle
+  flatpak -y install io.github.peazip.PeaZip
+  flatpak -y install com.poweriso.PowerISO
+  flatpak -y install io.github.giantpinkrobots.bootqt
 }
 
 ### Games ###
