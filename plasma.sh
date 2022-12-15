@@ -40,7 +40,7 @@ function DESKTOP_DE () {
     dialog --infobox "Installing The KDE Plasma Desktop Environment." 3 50
     sleep 2
     clear
-    sudo pacman -S --noconfirm --needed plasma kde-applications gnome-disk-utility redshift packagekit-qt5
+    sudo pacman -S --noconfirm --needed plasma kde-applications gnome-disk-utility redshift packagekit-qt5 plasma-wayland-session plasma-wayland-protocols
 }
 
 ### Setting Up Xorg Display Manager                                          ###
