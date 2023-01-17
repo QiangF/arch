@@ -32,7 +32,7 @@ function INSTALL_EXTRASOFTWARE() {
   sleep 2
   clear
   #3d Printer
-  $ZB -S --noconfirm --needed mattercontrol prusa-slicer
+  $ZB -S --noconfirm --needed mattercontrol
   #Accessories
   $ZB -S --noconfirm --needed isomaster ventoy-bin mintstick-git rpi-imager cool-retro-term
   #Chat
@@ -50,16 +50,8 @@ function INSTALL_EXTRASOFTWARE() {
   #Sound/Video
   $ZB -S --noconfirm --needed makemkv olive lbry-app-bin openshot shotcut quodlibet vlc flowblade
   #System Utilities
-  $ZB -S --noconfirm --needed cockpit cockpit-machines cockpit-pcp cockpit-podman syncthing dconf-editor virt-manager dnsmasq virglrenderer qemu-arch-extra qemu-guest-agent pacmanlogviewer deluge plank ncdu peazip-qt5 #  hardinfo cairo-dock cairo-dock-plug-ins
-  #$ZB -S --noconfirm --needed plank-theme-arc plank-theme-numix plank-theme-namor unity-like-plank-theme cairo-dock-themes cairo-dock-plug-ins-extras
-  $ZB -S --noconfirm --needed ovmf virtio-win libguestfs dxvk-bin timeshift stacer protontricks protonup-qt
-  $ZB -S --noconfirm --needed -a ebtables
-  sudo systemctl enable --now cockpit.socket
-  sudo systemctl enable libvirtd.service
-  sudo systemctl enable virtlogd.service
-  sudo sed -i '/\[global\]'/a'Environment="LD_LIBRARY_PATH=/usr/lib"' /etc/systemd/system/multi-user.target.wants/libvirtd.service
-  #sed -e '/"Type=simple"'/a'Environment="LD_LIBRARY_PATH=/usr/lib"' /etc/systemd/system/multi-user.target.wants/libvirtd.service
-  echo "options kvm-intel nested=1" | sudo tee /etc/modprobe.d/kvm-intel.conf
+  $ZB -S --noconfirm --needed syncthing dconf-editor dnsmasq pacmanlogviewer deluge plank ncdu peazip-qt5
+  $ZB -S --noconfirm --needed dxvk-bin timeshift stacer protontricks protonup-qt
 }
 
 ### Main Program                                                             ###
