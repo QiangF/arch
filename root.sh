@@ -20,7 +20,7 @@ function CLI_PROGS() {
     dialog --infobox "Installing some CLI programs." 3 32
     sleep 2
     clear
-     pacman -S --noconfirm --needed base-devel nano networkmanager man-db man-pages git btrfs-progs systemd-swap xfsprogs reiserfsprogs jfsutils nilfs-utils terminus-font ntp dialog neofetch git wget rsync htop openssh archlinux-wallpaper glances python-defusedxml python-packaging bashtop packagekit reflector bat mc lynx bwm-ng lsd gtop bpytop duf ncdu terminus-font btop
+     pacman -S --noconfirm --needed base-devel nano networkmanager man-db man-pages git btrfs-progs systemd-swap xfsprogs reiserfsprogs jfsutils nilfs-utils terminus-font ntp dialog neofetch git wget rsync htop openssh archlinux-wallpaper glances python-defusedxml python-packaging bashtop packagekit reflector bat mc lynx bwm-ng lsd gtop bpytop duf ncdu terminus-font btop pacman-contrib
 }
 
 ### Set Number Of CPUs In MAKEFLAGS                                          ###
@@ -97,6 +97,7 @@ function SET_VAR() {
   echo 'include "/usr/share/nano/*.nanorc"' >> /etc/nanorc
   echo "FONT=ter-120n" >> /etc/vconsole.conf
   echo 'vm.swappiness=10' | sudo tee /etc/sysctl.d/99-sysctl.conf
+  systemctl enable paccache.timer
 }
 
 ### Main Program                                                             ###

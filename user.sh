@@ -27,7 +27,8 @@ function BASHRC_CONF() {
   echo "alias videos='ytfzf -tS '" >> ~/.bashrc
   echo "alias cpu='cpufetch'" >> ~/.bashrc
   echo "alias info='clear&&neofetch'" >> ~/.bashrc
-  echo "alias ref-update='sudo reflector --country US --latest 20 --sort rate --verbose --save /etc/pacman.d/mirrorlist'" >> ~/.bashrc
+  echo "alias info2='clear&&inxi -b'" >> ~/.bashrc
+  echo "alias ref-update='clear&&sudo reflector --country US --latest 20 --sort rate --verbose --save /etc/pacman.d/mirrorlist'" >> ~/.bashrc
   echo "alias compress='clear&&sudo btrfs filesystem defragment -c -r -v '" >> ~/.bashrc
   if [ ${ZB} = "yay" ]; then
     echo "alias upd='clear&&yay --noconfirm -Syyu &&flatpak -y upgrade'" >> ~/.bashrc
@@ -262,7 +263,7 @@ function NEEDED_SOFTWARE() {
   dialog --infobox "Adding Some Needed Software." 3 32
   sleep 2
   clear
-  $ZB -S --noconfirm --needed tuned fontpreview-ueberzug-git ytfzf cpufetch flatpak
+  $ZB -S --noconfirm --needed tuned fontpreview-ueberzug-git ytfzf cpufetch flatpak inxi
 }
 
 ### Setting Up Bluetooth                                                     ###
@@ -329,7 +330,7 @@ function INSTALL_EXTRAFONTS() {
   sudo pacman -S --noconfirm --needed adobe-source-sans-pro-fonts cantarell-fonts noto-fonts terminus-font ttf-bitstream-vera ttf-dejavu ttf-droid ttf-inconsolata ttf-liberation ttf-roboto ttf-ubuntu-font-family tamsyn-font awesome-terminal-fonts ttf-font-awesome ttf-hack ttf-ibm-plex
   $ZB -S --noconfirm --needed ttf-ms-fonts ttf-mac-fonts siji-git ttf-font-awesome
   if [ ${NERD_FONTS} = "yes" ]; then
-    $ZB -S --noconfirm --needed nerd-fonts-complete
+    $ZB -S --noconfirm --needed nerd-fonts-git
   fi
 }
 
