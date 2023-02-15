@@ -18,6 +18,8 @@
   flatpak -y install io.github.peazip.PeaZip
   flatpak -y install com.poweriso.PowerISO
   flatpak -y install io.github.giantpinkrobots.bootqt
+  flatpak -y install io.github.Foldex.AdwSteamGtk
+  flatpak -y install com.usebottles.bottles
 }
 
 ### Games ###
