@@ -40,7 +40,7 @@ function INSTALL_EXTRASOFTWARE() {
   #Games
   $ZB -S --noconfirm --needed gamemode lib32-gamemode minecraft-launcher extremetuxracer supertux supertuxkart
   #Graphics
-  $ZB -S --noconfirm --needed drawio-desktop natron librecad darktable inkscape krita blender openscad luminancehdr freecad
+  $ZB -S --noconfirm --needed drawio-desktop-bin librecad darktable inkscape krita blender openscad luminancehdr gimp
   #Internet
   $ZB -S --noconfirm --needed transmission-gtk fragments remmina
   #Office
@@ -48,10 +48,10 @@ function INSTALL_EXTRASOFTWARE() {
   #Programming
   $ZB -S --noconfirm --needed meld rust rust-racer uncrustify
   #Sound/Video
-  $ZB -S --noconfirm --needed makemkv olive lbry-app-bin openshot shotcut quodlibet vlc flowblade
+  $ZB -S --noconfirm --needed olive-git lbry-app-bin openshot shotcut quodlibet vlc flowblade
   #System Utilities
   $ZB -S --noconfirm --needed syncthing dconf-editor dnsmasq pacmanlogviewer deluge plank ncdu peazip-qt5
-  $ZB -S --noconfirm --needed dxvk-bin timeshift stacer protontricks protonup-qt
+  $ZB -S --noconfirm --needed dxvk-bin timeshift stacer protontricks protonup-qt bottles
 }
 
 ### Main Program                                                             ###

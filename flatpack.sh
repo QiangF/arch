@@ -63,6 +63,7 @@ function SOFT_SOUNDVIDEO () {
   flatpak -y install io.mpv.Mpv
   flatpak -y install io.github.jliljebl.Flowblade
   flatpak -y install org.gpodder.gpodder
+  flatpak -y install org.strawberrymusicplayer.strawberry
 }
 
 ### Graphics ###

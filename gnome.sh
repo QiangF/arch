@@ -40,7 +40,7 @@ function DESKTOP_DE () {
     dialog --infobox "Installing The Gnome Desktop Environment." 3 45
     sleep 2
     clear
-    sudo pacman -S --noconfirm --needed gnome gnome-extra nautilus-share variety gnome-packagekit gnome-software-packagekit-plugin gtk-engine-murrine gtk-engines gnome-themes-extra
+    sudo pacman -S --noconfirm --needed gnome gnome-extra nautilus-share variety gnome-packagekit gtk-engine-murrine gtk-engines gnome-themes-extra
     $ZB -S --noconfirm --needed gnome-browser-connector extension-manager gradience adw-gtk3
     flatpak -y install org.gtk.Gtk3theme.adw-gtk3
 }

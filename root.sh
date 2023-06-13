@@ -97,6 +97,7 @@ function SET_VAR() {
   echo 'include "/usr/share/nano/*.nanorc"' >> /etc/nanorc
   echo "FONT=ter-120n" >> /etc/vconsole.conf
   echo 'vm.swappiness=10' | sudo tee /etc/sysctl.d/99-sysctl.conf
+  echo 'vm.max_map_count=2147483642' | sudo tee /etc/sysctl.d/99-sysctl.conf
   systemctl enable paccache.timer
 }
 
