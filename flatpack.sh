@@ -18,7 +18,7 @@
   flatpak -y install io.github.peazip.PeaZip
   flatpak -y install com.poweriso.PowerISO
   flatpak -y install io.github.giantpinkrobots.bootqt
-  flatpak -y install io.github.Foldex.AdwSteamGtk
+  #flatpak -y install io.github.Foldex.AdwSteamGtk
   flatpak -y install com.usebottles.bottles
 }
 
@@ -133,7 +133,7 @@ function SOFT_INTERNET () {
   echo "### Installing Internet                                                      ###"
   echo "################################################################################"
   sleep 3
-  flatpak -y install org.remmina.Remmina
+  #flatpak -y install org.remmina.Remmina
 }
 
 ### Programming
