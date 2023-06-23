@@ -330,7 +330,7 @@ function INSTALL_EXTRAFONTS() {
   sudo pacman -S --noconfirm --needed adobe-source-sans-pro-fonts cantarell-fonts noto-fonts terminus-font ttf-bitstream-vera ttf-dejavu ttf-droid ttf-inconsolata ttf-liberation ttf-roboto ttf-ubuntu-font-family tamsyn-font awesome-terminal-fonts ttf-font-awesome ttf-hack ttf-ibm-plex
   $ZB -S --noconfirm --needed ttf-ms-fonts ttf-mac-fonts siji-git ttf-font-awesome
   if [ ${NERD_FONTS} = "yes" ]; then
-    $ZB -S --noconfirm --needed nerd-fonts-git
+    $ZB -S --noconfirm --needed nerd-fonts-meta
   fi
 }
 
